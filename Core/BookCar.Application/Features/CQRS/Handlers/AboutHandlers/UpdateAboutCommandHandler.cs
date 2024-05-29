@@ -15,8 +15,7 @@ namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
 
         public async Task Handle(UpdateAboutCommand command)
         {
-            var value =mapper.Map<About>(command);
-            await repository.UpdateAsync(value);
+            await repository.UpdateAsync(mapper.Map<About>(command));
         }
     }
 }

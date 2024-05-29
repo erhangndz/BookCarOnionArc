@@ -17,8 +17,7 @@ namespace BookCar.Application.Features.CQRS.Handlers.BannerHandlers
 
         public async Task<GetBannerByIdQueryResult> Handle(GetBannerByIdQuery query)
         {
-            var value = await repository.GetByIdAsync(query.Id);
-            return mapper.Map<GetBannerByIdQueryResult>(value);
+            return mapper.Map<GetBannerByIdQueryResult>(await repository.GetByIdAsync(query.Id));
         }
 
     }

@@ -16,8 +16,8 @@ namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
 
         public async Task<GetAboutByIdQueryResult> Handle(GetAboutByIdQuery query)
         {
-            var value = await repository.GetByIdAsync(query.Id);
-            return mapper.Map<GetAboutByIdQueryResult>(value);
+            
+            return mapper.Map<GetAboutByIdQueryResult>(await repository.GetByIdAsync(query.Id));
         }
     }
 }

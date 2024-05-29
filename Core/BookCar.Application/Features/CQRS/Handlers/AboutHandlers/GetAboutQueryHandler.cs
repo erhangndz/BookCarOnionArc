@@ -14,8 +14,8 @@ namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
     {
         public async Task<List<GetAboutQueryResult>> Handle()
         {
-            var values = await _repository.GetAllAsync();
-            return _mapper.Map<List<GetAboutQueryResult>>(values);
+            
+            return _mapper.Map<List<GetAboutQueryResult>>(await _repository.GetAllAsync());
         }
 
     }

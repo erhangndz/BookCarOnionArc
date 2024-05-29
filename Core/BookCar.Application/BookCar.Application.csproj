@@ -14,4 +14,8 @@
     <ProjectReference Include="..\BookCar.Domain\BookCar.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\CQRS\Handlers\CarHandlers\" />
+  </ItemGroup>
+
 </Project>

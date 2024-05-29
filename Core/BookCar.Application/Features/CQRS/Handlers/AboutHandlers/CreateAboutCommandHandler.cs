@@ -15,8 +15,8 @@ namespace BookCar.Application.Features.CQRS.Handlers.AboutHandlers
 
         public async Task Handle(CreateAboutCommand command)
         {
-            var values = mapper.Map<About>(command); 
-            await repository.CreateAsync(values);
+           
+            await repository.CreateAsync(mapper.Map<About>(command));
         }
     }
 }
