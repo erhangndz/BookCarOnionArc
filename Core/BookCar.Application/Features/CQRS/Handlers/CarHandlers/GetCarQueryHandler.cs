@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BookCar.Application.Features.CQRS.Handlers.CarHandlers
 {
-    public class GetCarQueryHandler(IRepository<Car> _repository, IMapper _mapper)
+    public class GetCarQueryHandler(ICarRepository _repository, IMapper _mapper)
     {
 
 

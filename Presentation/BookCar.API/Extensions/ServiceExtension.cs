@@ -13,6 +13,7 @@ namespace BookCar.API.Extensions
         public static void AddServiceHandlers(this IServiceCollection services)
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<ICarRepository, CarRepository>();
             services.AddScoped<GetAboutQueryHandler>();
             services.AddScoped<GetAboutByIdQueryHandler>();
             services.AddScoped<UpdateAboutCommandHandler>();
