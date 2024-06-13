@@ -14,6 +14,7 @@ namespace BookCar.API.Extensions
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<ICarRepository, CarRepository>();
+            services.AddScoped<ICarDetailRepository, CarDetailRepository>();
             services.AddScoped<GetAboutQueryHandler>();
             services.AddScoped<GetAboutByIdQueryHandler>();
             services.AddScoped<UpdateAboutCommandHandler>();
@@ -40,6 +41,8 @@ namespace BookCar.API.Extensions
             services.AddScoped<CreateCarCommandHandler>();
             services.AddScoped<UpdateCarCommandHandler>();
             services.AddScoped<RemoveCarCommandHandler>();
+
+            
         }
     }
 }

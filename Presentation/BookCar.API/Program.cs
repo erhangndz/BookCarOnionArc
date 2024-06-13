@@ -1,4 +1,6 @@
 using BookCar.API.Extensions;
+using BookCar.Application.Features.Mediator.Handlers.CarDetailHandlers;
+using BookCar.Application.Features.Mediator.Queries.CarDetailQueries;
 using BookCar.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -7,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddServiceHandlers();
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssemblyContaining<GetCarDetailQuery>();
+});
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddDbContext<BookCarContext>(options =>
 {
