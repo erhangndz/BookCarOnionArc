@@ -15,8 +15,4 @@
     <ProjectReference Include="..\BookCar.Domain\BookCar.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Mediator\Commands\" />
-  </ItemGroup>
-
 </Project>
